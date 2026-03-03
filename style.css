@@ -11,9 +11,9 @@ body {
     color: #ffffff;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start; /* Cambiamos center por flex-start para que el scroll empiece bien */
     min-height: 100vh;
-    overflow: hidden; /* Evita scrolls raros en el celu */
+    background-color: #d6f3f4; /* Color de fondo final del degradado para evitar el bloque blanco */
 }
 
 /* Esta capa es el secreto para que el fondo no parpadee */
@@ -21,15 +21,15 @@ body {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     background: linear-gradient(180deg, 
         #004346 0%,    
         #004346 35%,   
         #74b3ce 75%,   
         #d6f3f4 100%   
     );
-    z-index: -1; /* Se queda atrás de todo */
+    z-index: -1;
     pointer-events: none;
 }
 .site-wrapper {
@@ -38,13 +38,15 @@ body {
     align-items: center;
     width: 90%;
     max-width: 400px;
-    padding: 10px; /* Reducimos padding para ganar espacio */
+    padding: 10px;
     text-align: center;
+    /* Añade esto para suavizar el scroll en iPhone/Android */
+    -webkit-overflow-scrolling: touch;
 }
 
 /* SUBIMOS EL HEADER */
 header {
-    margin-top: -30px; /* Lo sube un poco más hacia el tope */
+    margin-top: 40px; /* Espacio prudencial desde arriba */
     margin-bottom: 20px;
 }
 
@@ -149,11 +151,12 @@ header p {
 /* --- AGREGAR ESTO AL FINAL DE TU STYLE.CSS --- */
 
 .content-articles {
-    margin-top: 60px; /* Separación de los botones */
+    margin-top: 60px;
     text-align: left;
     padding: 0 10px;
+    width: 100%; /* Aseguramos que ocupe todo el ancho */
+    padding-bottom: 50px; /* Espacio final para que no quede pegado al borde inferior */
 }
-
 .content-articles article {
     margin-bottom: 30px;
     background: rgba(255, 255, 255, 0.05); /* Fondo muy sutil */
@@ -191,4 +194,5 @@ footer a {
 body {
     overflow-y: auto; /* Permitimos scroll vertical para leer los textos */
 }
+
 
