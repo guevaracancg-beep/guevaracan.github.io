@@ -22,14 +22,14 @@ function iniciarCiclo() {
     const visualGroup = document.getElementById('water-visual');
     const textoGuia = document.getElementById('texto-guia');
 
-    // FASE 1: INHALAR - Expansión más pronunciada (1.45)
-    textoGuia.innerText = "INHALA";
-    visualGroup.style.transform = "scale(1.45)"; 
+    // FASE 1: INHALAR - Expansión más pronunciada (1.30)
+    textoGuia.innerText = "Inhala";
+    visualGroup.style.transform = "scale(1.30)"; 
     visualGroup.style.transition = `transform ${tecnicaActual.inhale}ms cubic-bezier(0.4, 0, 0.2, 1)`;
 
     timer = setTimeout(() => {
         if (tecnicaActual.hold > 0) {
-            textoGuia.innerText = "MANTÉN";
+            textoGuia.innerText = "Mantén";
             timer = setTimeout(faseExhalar, tecnicaActual.hold);
         } else {
             faseExhalar();
@@ -38,13 +38,13 @@ function iniciarCiclo() {
 
     function faseExhalar() {
         // FASE 3: EXHALAR - Contracción total
-        textoGuia.innerText = "EXHALA";
+        textoGuia.innerText = "Exhala";
         visualGroup.style.transform = "scale(1)"; 
         visualGroup.style.transition = `transform ${tecnicaActual.exhale}ms cubic-bezier(0.4, 0, 0.2, 1)`;
 
         timer = setTimeout(() => {
             if (tecnicaActual.hold2 > 0) {
-                textoGuia.innerText = "MANTÉN";
+                textoGuia.innerText = "Mantén";
                 timer = setTimeout(iniciarCiclo, tecnicaActual.hold2);
             } else {
                 iniciarCiclo();
@@ -52,5 +52,6 @@ function iniciarCiclo() {
         }, tecnicaActual.exhale);
     }
 }
+
 
 iniciarCiclo();
