@@ -1,0 +1,130 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: linear-gradient(180deg, #004346 0%, #004346 30%, #74b3ce 70%, #d6f3f4 100%);
+    background-attachment: fixed;
+    /* UNIFICAMOS TIPOGRAFÍA */
+    font-family: 'Comfortaa', cursive;
+    color: #ffffff; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.site-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    max-width: 400px;
+    padding: 10px; /* Reducimos padding para ganar espacio */
+    text-align: center;
+}
+
+/* SUBIMOS EL HEADER */
+header {
+    margin-top: -30px; /* Lo sube un poco más hacia el tope */
+    margin-bottom: 20px;
+}
+
+header h1 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+header p {
+    font-weight: 300;
+    font-size: 0.95rem;
+    opacity: 0.9;
+}
+
+/* VISUAL CONTRABALANCEADO */
+.visual-container {
+    position: relative;
+    width: 260px; /* Ajustamos un poco el tamaño base para dar espacio a la expansión */
+    height: 260px;
+    margin: 60px 0; /* Espacio para que al crecer no toque el texto */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wave-group {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1; 
+}
+
+.wave {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+    animation: oscillate-wave infinite ease-in-out;
+    transform-origin: center center;
+}
+
+@keyframes oscillate-wave {
+    0%   { border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%; transform: rotate(0deg); }
+    50%  { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; transform: rotate(180deg); }
+    100% { border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%; transform: rotate(360deg); }
+}
+
+.wave1 { background-color: #004346; animation-duration: 10s; z-index: 2; }
+.wave2 { background-color: #74b3ce; opacity: 0.8; scale: 1.08; animation-duration: 14s; animation-delay: -2s; z-index: 3; }
+.wave3 { background-color: #d6f3f4; opacity: 0.6; scale: 1.15; animation-duration: 18s; animation-delay: -4s; z-index: 4; }
+
+.text-overlay {
+    position: absolute;
+    z-index: 100;
+    pointer-events: none;
+}
+
+#texto-guia {
+    font-weight: 700;
+    font-size: 2.2rem;
+    color: #ffffff;
+    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.6), 0 0 10px rgba(0, 0, 0, 0.4);
+}
+
+/* BOTONES */
+.tecnicas-nav {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    margin-top: 40px; /* Más espacio respecto a las olas */
+}
+
+.btn-tecnica {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    padding: 10px 5px;
+    border-radius: 20px;
+    font-family: 'Comfortaa', cursive; /* Asegurada */
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    flex: 1;
+}
+
+.btn-tecnica.active {
+    background: #d6f3f4;
+    color: #004346;
+    font-weight: 700;
+}
+
+/* RESPONSIVE */
+@media (min-width: 600px) {
+    .site-wrapper { max-width: 500px; }
+    .visual-container { width: 320px; height: 320px; }
+}
