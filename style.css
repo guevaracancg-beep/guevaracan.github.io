@@ -5,32 +5,33 @@
 }
 
 body {
-    /* FONDO FIJO: Definimos los colores exactos para que no parpadeen */
-    background: #004346; /* Color de respaldo para evitar flashes blancos */
-    background-image: linear-gradient(180deg, 
+    margin: 0;
+    padding: 0;
+    font-family: 'Comfortaa', cursive;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden; /* Evita scrolls raros en el celu */
+}
+
+/* Esta capa es el secreto para que el fondo no parpadee */
+.background-fix {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(180deg, 
         #004346 0%,    
         #004346 35%,   
         #74b3ce 75%,   
         #d6f3f4 100%   
     );
-    
-    /* Estos tres ajustes evitan el salto visual al animar */
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-size: cover;
-
-    font-family: 'Comfortaa', cursive;
-    color: #ffffff; 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    margin: 0;
-    
-    /* Evita que aparezcan barras de scroll durante la expansión */
-    overflow: hidden; 
+    z-index: -1; /* Se queda atrás de todo */
+    pointer-events: none;
 }
-
 .site-wrapper {
     display: flex;
     flex-direction: column;
@@ -144,3 +145,4 @@ header p {
     .visual-container { width: 320px; height: 320px; }
 
 }
+
