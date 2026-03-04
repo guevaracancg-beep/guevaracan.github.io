@@ -3,11 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Respira - Encuentra tu calma</title>
     
-    <meta name="description" content="Domina tu ansiedad con ejercicios de respiración guiada. Técnicas de respiración en caja y 4-7-8 para relajación inmediata y bienestar mental.">
-    <meta name="keywords" content="respiración, meditación, ansiedad, calma, ejercicios de respiración, 4-7-8, técnica de caja">
+    <title>Ejercicios de Respiración Guiada para la Ansiedad | Respira App</title>
     
+    <meta name="description" content="Reduce el estrés con nuestras técnicas de respiración 4-7-8 y respiración en caja. Ejercicios guiados gratuitos para mejorar tu salud mental y dormir mejor.">
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Respira App",
+      "applicationCategory": "HealthApplication",
+      "operatingSystem": "Any",
+      "description": "Herramienta interactiva de ejercicios de respiración para mindfulness y control de ansiedad.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    }
+    </script>
+
     <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -16,45 +32,50 @@
     <div class="site-wrapper">
         <header>
             <h1>Respira</h1>
-            <p id="instruccion">Relaja tu mente. Sigue el ritmo del agua.</p>
+            <p id="instruccion">Técnicas de Respiración Consciente y Mindfulness</p>
         </header>
 
-        <div class="visual-container">
-            <div class="wave-group" id="water-visual">
-                <div class="wave wave1"></div>
-                <div class="wave wave2"></div>
-                <div class="wave wave3"></div>
+        <main class="app-container">
+            <div class="visual-container">
+                <div class="wave-group" id="water-visual">
+                    <div class="wave wave1"></div>
+                    <div class="wave wave2"></div>
+                    <div class="wave wave3"></div>
+                </div>
+                <div class="text-overlay">
+                    <p id="texto-guia">Inhala</p>
+                </div>
             </div>
-            <div class="text-overlay">
-                <p id="texto-guia">Inhala</p>
-            </div>
-        </div>
 
-        <nav class="tecnicas-nav">
-            <button class="btn-tecnica active" onclick="cambiarTecnica('caja')">Caja (4s)</button>
-            <button class="btn-tecnica" onclick="cambiarTecnica('478')">4-7-8</button>
-            <button class="btn-tecnica" onclick="cambiarTecnica('relajante')">Relajación (4-6)</button>
-        </nav>
-
-        <main class="content-articles">
-            <article>
-                <h3>¿Qué es la Respiración en Caja?</h3>
-                <p>Utilizada por atletas de élite y fuerzas especiales, esta técnica de 4 segundos ayuda a resetear el sistema nervioso ante situaciones de alto estrés, mejorando el enfoque y la claridad mental.</p>
-            </article>
-
-            <article>
-                <h3>El Método 4-7-8</h3>
-                <p>Conocida como el tranquilizante natural, esta técnica ayuda a reducir la ansiedad y facilita la conciliación del sueño al forzar al cuerpo a entrar en un estado de relajación profunda.</p>
-            </article>
-
-            <article>
-                <h3>Beneficios de la Calma</h3>
-                <p>Practicar solo 5 minutos al día reduce los niveles de cortisol, mejora la presión arterial y fortalece tu capacidad de respuesta ante los desafíos diarios.</p>
-            </article>
+            <nav class="tecnicas-nav">
+                <button class="btn-tecnica active" onclick="cambiarTecnica('caja')">Caja (4s)</button>
+                <button class="btn-tecnica" onclick="cambiarTecnica('478')">4-7-8 (Sueño)</button>
+                <button class="btn-tecnica" onclick="cambiarTecnica('relajante')">Relajación</button>
+            </nav>
         </main>
 
+        <section class="seo-content">
+            <article>
+                <h2>Técnicas de Respiración para la Ansiedad</h2>
+                <p>La <strong>respiración consciente</strong> es la herramienta más rápida para hackear tu sistema nervioso. Al controlar el ritmo de tu inhalación y exhalación, envías una señal directa al cerebro para desactivar la respuesta de "lucha o huida".</p>
+                
+                <h3>Beneficios de la Respiración 4-7-8</h3>
+                <p>Este método, desarrollado por el Dr. Andrew Weil, actúa como un tranquilizante natural. Es ideal para quienes sufren de insomnio o ataques de pánico repentinos.</p>
+            </article>
+
+            <article>
+                <h2>¿Por qué usar la Respiración en Caja?</h2>
+                <p>También conocida como <em>Box Breathing</em>, es la técnica preferida de los Navy SEALs. Ayuda a mantener la calma extrema en entornos de alta presión, equilibrando los niveles de CO2 y oxígeno en sangre.</p>
+            </article>
+        </section>
+
         <footer>
-            <p>&copy; 2024 Respira App | <a href="#">Privacidad</a> | <a href="#">Contacto</a></p>
+            <nav class="footer-nav">
+                <a href="#">Política de Privacidad</a>
+                <a href="#">Términos de Uso</a>
+                <a href="#">Contacto</a>
+            </nav>
+            <p>&copy; 2026 Respira - Tu guía de bienestar mental.</p>
         </footer>
     </div>
 
