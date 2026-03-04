@@ -1,5 +1,5 @@
 /* =========================================
-   1. Configuraciones Globales y Fondo Claro
+   1. Configuraciones Globales
    ========================================= */
 * {
     box-sizing: border-box;
@@ -11,32 +11,32 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Comfortaa', cursive;
-    /* CAMBIO DE COLOR DE TEXTO BASE A OSCURO */
+    /* Color de texto principal (azul oscuro) */
     color: #004346; 
     display: flex;
     justify-content: center;
-    align-items: flex-start; /* Permite que el scroll fluya naturalmente */
+    align-items: flex-start;
     min-height: 100vh;
-    /* Fondo de respaldo claro para evitar cortes visuales al scrollear */
+    /* Fondo de respaldo claro */
     background-color: #ffffff; 
-    overflow-y: auto; /* Permite scroll vertical */
+    overflow-y: auto;
 }
 
-/* Esta capa es el secreto para que el fondo no parpadee */
+/* Capa de fondo fija con degradado invertido */
 .background-fix {
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-    /* INVERSIÓN DEL DEGRADADO: Comienza en blanco y baja hacia el azul */
+    /* Degradado de blanco (arriba) a azul oscuro (abajo) */
     background: linear-gradient(180deg, 
         #ffffff 0%,    /* Blanco puro arriba */
         #d6f3f4 40%,   /* Celeste muy claro */
         #74b3ce 75%,   /* Azul medio */
         #004346 100%   /* Verde oscuro profundo abajo */
     );
-    z-index: -1; /* Se queda atrás de todo */
+    z-index: -1;
     pointer-events: none;
 }
 
@@ -48,15 +48,13 @@ body {
     max-width: 400px;
     padding: 20px;
     text-align: center;
-    /* Suavizado de scroll para móviles */
     -webkit-overflow-scrolling: touch; 
 }
 
 /* =========================================
-   2. Header y Textos (COLORES CORREGIDOS)
+   2. Header
    ========================================= */
 header {
-    /* CORRECCIÓN DE CORTE: Espacio prudencial desde arriba */
     margin-top: 50px; 
     margin-bottom: 30px;
     width: 100%;
@@ -66,34 +64,39 @@ header h1 {
     font-size: 2.8rem;
     font-weight: 700;
     margin-bottom: 10px;
-    /* COLOR AZUL OSCURO PARA EL TÍTULO */
-    color: #004346; 
+    color: #004346; /* Azul oscuro */
 }
 
 header p {
     font-weight: 300;
     font-size: 1rem;
     opacity: 0.9;
-    /* COLOR AZUL OSCURO PARA EL SUBTÍTULO */
-    color: #004346; 
+    color: #004346; /* Azul oscuro */
 }
 
 /* =========================================
-   3. La Animación y EL TEXTO (Ajustes de Capas)
+   3. Interfaz de la App (Visual y Botones)
    ========================================= */
+.app-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 50px;
+}
+
 .visual-container {
     position: relative;
     width: 280px;
     height: 280px;
-    margin: 40px 0;
+    margin: 20px 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    /* Aseguramos que el contenedor no corte la expansión */
     overflow: visible; 
 }
 
-/* El grupo de olas se queda atrás */
+/* Olas de agua */
 .wave-group {
     position: absolute;
     width: 100%;
@@ -116,52 +119,51 @@ header p {
     100% { border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%; transform: rotate(360deg); }
 }
 
-/* Capas de olas (Mantienen su color original para contraste) */
 .wave1 { background-color: #004346; animation-duration: 10s; z-index: 2; }
 .wave2 { background-color: #74b3ce; opacity: 0.8; scale: 1.08; animation-duration: 14s; animation-delay: -2s; z-index: 3; }
 .wave3 { background-color: #d6f3f4; opacity: 0.6; scale: 1.15; animation-duration: 18s; animation-delay: -4s; z-index: 4; }
 
-/* EL TEXTO CENTRAL: Se mantiene blanco para resaltar sobre las olas */
+/* Texto central "Inhala/Exhala" */
 .text-overlay {
     position: absolute;
-    z-index: 100; /* Por encima de todas las olas */
+    z-index: 100;
     pointer-events: none;
 }
 
 #texto-guia {
     font-weight: 700;
     font-size: 2.2rem;
-    color: #ffffff;
+    color: #ffffff; /* Blanco para contrastar con las olas oscuras */
     text-transform: capitalize;
-    /* Sombra pesada para que "flote" sobre las olas claras */
-    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.6), 0 0 10px rgba(0, 0, 0, 0.4);
+    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
     margin: 0;
 }
 
-/* =========================================
-   4. Botones (Manteniendo tu estilo preferido)
-   ========================================= */
+/* Navegación de Botones */
 .tecnicas-nav {
     display: flex;
     justify-content: center;
     gap: 10px;
     width: 100%;
-    margin-top: 20px;
+    margin-top: 30px;
 }
 
 .btn-tecnica {
-    /* Estilo Glassmorphism ajustado para fondo claro */
-    background: rgba(0, 67, 70, 0.1); /* Fondo azul oscuro muy suave */
-    backdrop-filter: blur(5px);
-    border: 1px solid rgba(0, 67, 70, 0.2); /* Borde azul oscuro sutil */
+    /* Estilo de botón claro sobre fondo claro */
+    background: rgba(0, 67, 70, 0.05); /* Azul oscuro casi transparente */
+    border: 1px solid rgba(0, 67, 70, 0.1);
     color: #004346; /* Texto azul oscuro */
-    padding: 10px 15px;
+    padding: 12px 10px;
     border-radius: 20px;
     font-family: 'Comfortaa', cursive;
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     cursor: pointer;
     transition: all 0.3s ease;
     flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 45px;
 }
 
 .btn-tecnica.active {
@@ -169,120 +171,107 @@ header p {
     background: #004346;
     color: #ffffff;
     font-weight: 700;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 /* =========================================
-   5. Contenido de Artículos (Ajustes de Color)
+   4. Secciones de Contenido (SEO)
    ========================================= */
-.content-articles {
-    margin-top: 60px;
+.seo-content, .blog-container {
+    width: 100%;
+    margin-top: 40px;
     text-align: left;
     padding: 0 10px;
-    width: 100%;
-    padding-bottom: 50px; /* Espacio final para que no quede pegado abajo */
-}
-
-.content-articles article {
-    margin-bottom: 30px;
-    /* Fondo sutil ajustado para fondo claro */
-    background: rgba(0, 67, 70, 0.05); 
-    padding: 20px;
-    border-radius: 15px;
-    border-left: 3px solid #74b3ce; /* Borde azul medio */
-}
-
-.content-articles h3 {
-    font-size: 1.2rem;
-    margin-bottom: 10px;
-    /* COLOR AZUL OSCURO PARA LOS TÍTULOS DE ARTÍCULOS */
-    color: #004346; 
-}
-
-.content-articles p {
-    font-size: 0.9rem;
-    line-height: 1.6;
-    opacity: 0.85;
-    /* COLOR AZUL OSCURO PARA EL TEXTO DE ARTÍCULOS */
-    color: #004346; 
-}
-
-/* =========================================
-   6. Footer (Ajustes de Color)
-   ========================================= */
-footer {
-    margin-top: 40px;
-    padding-bottom: 40px;
-    font-size: 0.75rem;
-    opacity: 0.6;
-    /* COLOR AZUL OSCURO PARA EL FOOTER */
-    color: #004346; 
-}
-
-footer a {
-    /* COLOR AZUL OSCURO PARA LOS ENLACES DEL FOOTER */
-    color: #004346; 
-    text-decoration: none;
-    margin: 0 5px;
-}
-
-/* =========================================
-   7. Ajustes Responsive
-   ========================================= */
-@media (min-width: 600px) {
-    .site-wrapper { max-width: 500px; }
-    .visual-container { width: 340px; height: 340px; }
-    #texto-guia { font-size: 2.8rem; }
-}
-
-/* ESTILO PARA LA SECCIÓN DE BLOG SEO */
-.blog-container {
-    width: 100%;
-    margin-top: 50px;
-    padding-bottom: 30px;
 }
 
 .section-title {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     color: #004346;
     margin-bottom: 25px;
     text-align: center;
 }
 
-.blog-post {
-    background: rgba(255, 255, 255, 0.4); /* Efecto cristal suave */
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(0, 67, 70, 0.1);
-    border-radius: 20px;
+.seo-content article, .blog-post {
+    margin-bottom: 30px;
     padding: 25px;
-    margin-bottom: 25px;
-    text-align: left;
-    transition: transform 0.3s ease;
+    border-radius: 20px;
+    border-left: 4px solid #74b3ce;
+    /* Fondo semi-transparente para asegurar legibilidad */
+    background: rgba(255, 255, 255, 0.6); 
+    backdrop-filter: blur(5px);
 }
 
-.blog-post:hover {
-    transform: translateY(-5px);
+.seo-content h2, .blog-post h3 {
+    font-size: 1.3rem;
+    color: #004346;
+    margin-bottom: 12px;
+}
+
+.seo-content h3 {
+    font-size: 1.1rem;
+    color: #004346;
+    margin-top: 20px;
+    margin-bottom: 8px;
+}
+
+.seo-content p, .blog-post p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: #004346;
+    opacity: 0.9;
 }
 
 .post-tag {
     display: inline-block;
-    background: #74b3ce;
+    background: #004346;
     color: white;
-    font-size: 0.7rem;
-    padding: 3px 10px;
+    font-size: 0.75rem;
+    padding: 4px 12px;
     border-radius: 50px;
-    margin-bottom: 10px;
+    margin-bottom: 12px;
     font-weight: 700;
 }
 
-.blog-post h3 {
-    color: #004346;
-    font-size: 1.2rem;
-    margin-bottom: 10px;
+/* =========================================
+   5. Footer
+   ========================================= */
+footer {
+    margin-top: 50px;
+    padding: 30px 0;
+    width: 100%;
+    border-top: 1px solid rgba(0, 67, 70, 0.1);
 }
 
-.blog-post p {
+.footer-nav {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+footer a {
     color: #004346;
-    font-size: 0.9rem;
-    line-height: 1.6;
+    text-decoration: none;
+    font-size: 0.85rem;
     opacity: 0.8;
+}
+
+footer a:hover {
+    opacity: 1;
+    text-decoration: underline;
+}
+
+footer p {
+    font-size: 0.8rem;
+    color: #004346;
+    opacity: 0.6;
+}
+
+/* =========================================
+   6. Ajustes Responsive
+   ========================================= */
+@media (min-width: 600px) {
+    .site-wrapper { max-width: 500px; }
+    .visual-container { width: 340px; height: 340px; }
+    #texto-guia { font-size: 2.8rem; }
 }
