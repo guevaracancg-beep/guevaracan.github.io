@@ -310,7 +310,7 @@ footer p {
     transform: translateY(-5px);
 }
 
-.info-card h3 {
+.info-card h2 {
     color: #004346; /* Tu azul oscuro actual */
     font-size: 1.3rem;
     margin-bottom: 12px;
@@ -323,3 +323,4 @@ footer p {
     line-height: 1.6; /* Espaciado entre líneas para mejor lectura */
     opacity: 0.9;
 }
+
