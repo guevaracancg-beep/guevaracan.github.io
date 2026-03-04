@@ -343,3 +343,41 @@ footer p {
     margin-bottom: 12px;
     font-weight: 700;
 }
+
+/* =========================================
+   AJUSTES DE CONTRASTE PARA EL PIE DE PÁGINA
+   ========================================= */
+
+/* Color blanco para los enlaces y texto del footer */
+footer, .footer-nav a {
+    color: #ffffff !important; 
+    opacity: 1; /* Le damos máxima opacidad para que brille */
+}
+
+.footer-nav span {
+    color: #ffffff;
+    margin: 0 5px;
+}
+
+footer p {
+    color: #ffffff !important;
+    opacity: 0.8;
+    margin-top: 15px;
+}
+
+/* Estilo para el botón "Volver al respirador" en blog.html */
+.btn-volver {
+    display: inline-block;
+    color: #ffffff !important;
+    text-decoration: none;
+    font-weight: 700;
+    border: 1px solid #ffffff;
+    padding: 10px 20px;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    margin-bottom: 20px;
+}
+
+.btn-volver:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
