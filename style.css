@@ -275,3 +275,50 @@ footer p {
     .visual-container { width: 340px; height: 340px; }
     #texto-guia { font-size: 2.8rem; }
 }
+
+/* CONTENEDOR DE TARJETAS */
+.metodos-info {
+    width: 100%;
+    margin-top: 50px;
+    padding: 0 10px 40px 10px;
+}
+
+/* TARJETAS INDIVIDUALES (Soluciona la legibilidad) */
+.info-card {
+    background: rgba(255, 255, 255, 0.85); /* Fondo blanco casi sólido para leer perfecto */
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 25px;
+    margin-bottom: 20px;
+    text-align: left;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.info-card h3 {
+    color: #004346;
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.info-card p {
+    color: #004346;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* AJUSTE PARA EL WRAPPER */
+.site-wrapper {
+    max-width: 450px; /* Un poco más ancho para las tarjetas */
+    margin: 0 auto;
+    display: block; /* Para que el scroll funcione mejor */
+}
+
+/* Aseguramos que el body permita scroll largo */
+body {
+    align-items: flex-start; 
+    overflow-y: auto;
+    height: auto;
+}
