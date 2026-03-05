@@ -1,38 +1,25 @@
-OCTYPE html>
-<html lang="es">
-<head>
+<!DOCTYPE html>
+<html lang="pt"> <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>Ejercicios de Respiración Guiada para la Ansiedad | Respira App</title>
-    
-    <meta name="description" content="Reduce el estrés con nuestras técnicas de respiración 4-7-8 y respiración en caja. Ejercicios guiados gratuitos para mejorar tu salud mental y dormir mejor.">
-    
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebApplication",
-      "name": "Respira App",
-      "applicationCategory": "HealthApplication",
-      "operatingSystem": "Any",
-      "description": "Herramienta interactiva de ejercicios de respiración para mindfulness y control de ansiedad.",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD"
-      }
-    }
-    </script>
+    <title>Guided Breathing Exercises for Anxiety | Respira App</title>
+    <meta name="description" content="Reduce stress with our 4-7-8 and box breathing techniques. Free guided exercises.">
 
     <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../style.css">
-</head>
+    <link rel="stylesheet" href="../style.css"> </head>
 <body>
     <div class="background-fix"></div>
     <div class="site-wrapper">
         <header>
+            <nav class="language-picker">
+                <a href="../index.html">ES</a> | 
+                <a href="index.html">EN</a> | 
+                <a href="../pt/index.html">PT</a> | 
+                <a href="../fr/index.html">FR</a>
+            </nav>
             <h1>Respira</h1>
-            <p id="instruccion">Técnicas de Respiración Consciente y Mindfulness</p>
+            <p id="instruccion">Conscious Breathing and Mindfulness Techniques</p>
         </header>
 
         <main class="app-container">
@@ -43,46 +30,32 @@ OCTYPE html>
                     <div class="wave wave3"></div>
                 </div>
                 <div class="text-overlay">
-                    <p id="texto-guia">Inhala</p>
-                </div>
+                    <p id="texto-guia">Breathe In</p> </div>
             </div>
 
             <nav class="tecnicas-nav">
-                <button class="btn-tecnica active" onclick="cambiarTecnica('caja')">Caja (4s)</button>
-                <button class="btn-tecnica" onclick="cambiarTecnica('478')">4-7-8 (Sueño)</button>
-                <button class="btn-tecnica" onclick="cambiarTecnica('relajante')">Relajación</button>
+                <button class="btn-tecnica active" onclick="cambiarTecnica('caja')">Box (4s)</button>
+                <button class="btn-tecnica" onclick="cambiarTecnica('478')">4-7-8 (Sleep)</button>
+                <button class="btn-tecnica" onclick="cambiarTecnica('relajante')">Relax</button>
             </nav>
         </main>
 
-       <section class="metodos-info">
-
-<section class="metodos-info">
-    <div class="info-card">
-        <h2>Técnica de Respiración en Caja para el Estrés</h2>
-        <p>Utilizada por los Navy SEALs para mantener la calma extrema. Inhala, mantén, exhala y espera por 4 segundos cada paso para resetear tu sistema nervioso y mejorar el enfoque.</p>
-    </div>
-
-    <div class="info-card">
-        <h2>Método de Respiración 4-7-8 para Dormir Mejor</h2>
-        <p>El "tranquilizante natural" para el cerebro. Ideal para conciliar el sueño y reducir la ansiedad rápidamente antes de dormir o ante un pico de estrés agudo.</p>
-    </div>
-
-    <div class="info-card">
-        <h2>Relajación Consciente y Control de la Ansiedad</h2>
-        <p>Un ritmo suave de 4 segundos para inhalar y 6 para exhalar. Este ejercicio está enfocado en activar el nervio vago y bajar las pulsaciones de forma totalmente natural.</p>
-    </div>
-</section>
-           
+        <section class="metodos-info">
+            <div class="info-card">
+                <h2>Box Breathing Technique for Stress</h2>
+                <p>Used by Navy SEALs to maintain extreme calm. Inhale, hold, exhale, and wait for 4 seconds each step to reset your nervous system.</p>
+            </div>
+            </section>
+        
         <footer>
-    <nav class="footer-nav">
-        <a href="blog.html" style="font-weight: bold; color: #004346;">Leer el Blog</a> 
-        <span>|</span>
-        <a href="#">Privacidad</a>
-        <a href="#">Contacto</a>
-    </nav>
-    <p>&copy; 2026 Respira - Tu guía de bienestar mental.</p>
-</footer>
+            <nav class="footer-nav">
+                <a href="blog.html" style="font-weight: bold; color: #ffffff;">Read Blog</a> 
+                <span>|</span>
+                <a href="#" style="color: #ffffff;">Privacy</a>
+            </nav>
+            <p style="color: #ffffff;">&copy; 2026 Respira - Your mental wellbeing guide.</p>
+        </footer>
+    </div>
 
-<script src="../script.js"></script>
-       </body>
+    <script src="../script.js"></script> </body>
 </html>
