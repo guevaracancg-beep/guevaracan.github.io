@@ -379,10 +379,14 @@ footer p {
 }
 
 .language-picker {
-    margin-bottom: 20px;
+    display: flex;      /* Usamos flexbox para centrar */
+    justify-content: center; 
+    align-items: center;
+    gap: 10px;          /* Espacio entre las siglas */
+    width: 100%;        /* Que ocupe todo el ancho para poder centrar */
+    margin-bottom: 25px;
     font-size: 0.85rem;
     font-weight: 700;
-    letter-spacing: 1px;
 }
 
 .language-picker a {
@@ -404,4 +408,5 @@ footer p {
 .btn-volver:hover {
     background: rgba(255, 255, 255, 0.2);
 }
+
 
