@@ -378,6 +378,30 @@ footer p {
     margin-bottom: 20px;
 }
 
+.language-picker {
+    margin-bottom: 20px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.language-picker a {
+    color: #004346; /* Tu azul oscuro */
+    text-decoration: none;
+    padding: 5px 8px;
+    opacity: 0.6;
+    transition: opacity 0.3s;
+}
+
+.language-picker a:hover {
+    opacity: 1;
+}
+
+.active-lang {
+    opacity: 1 !important;
+    border-bottom: 2px solid #004346;
+}
 .btn-volver:hover {
     background: rgba(255, 255, 255, 0.2);
 }
+
